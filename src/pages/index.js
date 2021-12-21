@@ -7,14 +7,14 @@ export default function Gallery() {
   const data = useStaticQuery(graphql`
   query PhotoPage{
     gcms{
-        photo{
-            id
-            name
-            description
-            image{
-                url
-            }
-        }
+      photo{
+          id
+          name
+          description
+          image{
+            url(transformation: {image: {resize: {width: 500, height: 500, fit: clip}}})
+          }
+      }
     }
 }
   `);
